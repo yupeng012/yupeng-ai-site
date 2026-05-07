@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yupeng AI | Intelligent Data Automation</title>
-    <meta name="description" content="Transform messy data into actionable insights instantly.">
-    
+    <title>Yupeng AI | Intelligent Automation for SaaS</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Vue 3 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <script>
@@ -18,175 +16,194 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-bg': '#0F172A',
-                        'brand-card': '#1E293B',
-                        'brand-border': '#334155',
-                        'brand-blue': '#3B82F6',
-                        'brand-coral': '#FF7F50',
-                        'brand-text': '#F1F5F9',
-                        'brand-text-dim': '#94A3B8',
+                        deep: '#0B0F19',
+                        card: '#151A2B',
+                        coral: '#FF6B6B',
+                        'coral-hover': '#FF5252',
+                        text: '#F1F5F9',
+                        'text-dim': '#94A3B8'
                     },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(255, 107, 107, 0.15)',
+                    }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #0F172A; color: #F1F5F9; }
-        .gradient-text {
-            background: linear-gradient(135deg, #60A5FA 0%, #FF7F50 100%);
+        body {
+            background-color: #0B0F19;
+            color: #F1F5F9;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(21, 26, 43, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #FF6B6B, #FF9E9E);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(148, 163, 184, 0.2);
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 107, 107, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(255, 107, 107, 0.2);
         }
-        /* 动态波浪动画 */
-        @keyframes wave {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+            transition: all 0.3s ease;
         }
-        .animate-wave { animation: wave 3s ease-in-out infinite; }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(255, 107, 107, 0.4);
+        }
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
-    <div id="app" class="antialiased min-h-screen">
+    <div id="app" class="min-h-screen flex flex-col">
         <!-- Navbar -->
-        <nav class="fixed w-full z-50 glass-card border-b border-brand-border">
-            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                <div class="text-xl font-bold tracking-tight text-white">Yupeng<span class="text-brand-coral">AI</span></div>
-                <div class="hidden md:flex space-x-8 text-sm font-medium text-brand-text-dim">
-                    <a href="#capabilities" class="hover:text-white transition">Capabilities</a>
-                    <a href="#demo" class="hover:text-white transition">Live Demo</a>
-                    <a href="#process" class="hover:text-white transition">Process</a>
-                </div>
-                <a href="#contact" class="bg-brand-coral hover:bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-orange-500/20">
-                    Get Started
-                </a>
-            </div>
-        </nav>
-
-        <!-- Hero Section -->
-        <section class="pt-40 pb-20 px-6 relative overflow-hidden">
-            <!-- 背景装饰 -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-                <div class="absolute top-20 right-10 w-72 h-72 bg-brand-blue/20 rounded-full blur-3xl animate-wave"></div>
-                <div class="absolute bottom-10 left-10 w-96 h-96 bg-brand-coral/10 rounded-full blur-3xl animate-wave" style="animation-delay: 1s;"></div>
-            </div>
-
-            <div class="max-w-5xl mx-auto text-center relative z-10">
-                <div class="inline-block py-1 px-3 rounded-full bg-brand-blue/20 text-brand-blue text-xs font-semibold mb-6 border border-brand-blue/30">
-                    POWERED BY ADVANCED AI AGENTS
-                </div>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
-                    Turn Messy Data into <br/>
-                    <span class="gradient-text">Actionable Intelligence</span>
-                </h1>
-                <p class="text-xl text-brand-text-dim mb-10 max-w-2xl mx-auto leading-relaxed">
-                    We help SaaS founders and e-commerce brands automate data cleaning, enrichment, and reporting. 
-                    <br/><span class="text-white font-semibold">Save 20+ hours/week. Zero errors. Instant insights.</span>
-                </p>
-                <div class="flex flex-col md:flex-row gap-4 justify-center">
-                    <a href="#demo" class="bg-brand-coral hover:bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20">
-                        Try Live Demo 
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-                    </a>
-                    <a href="#contact" class="glass-card hover:bg-brand-card text-white px-8 py-4 rounded-lg text-lg font-semibold transition border border-brand-border">
-                        Book a Consultation
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Capabilities -->
-        <section id="capabilities" class="py-20 bg-brand-bg">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-12 text-center text-white">Why Choose Yupeng AI?</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div v-for="(item, index) in capabilities" :key="index" class="glass-card p-6 rounded-xl border border-brand-border hover:border-brand-blue/50 transition shadow-lg">
-                        <div class="text-brand-blue mb-4" v-html="item.icon"></div>
-                        <h3 class="text-lg font-bold mb-2 text-white">{{ item.title }}</h3>
-                        <p class="text-brand-text-dim text-sm leading-relaxed">{{ item.desc }}</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span v-for="tech in item.tech" :key="tech" class="text-xs px-2 py-1 rounded bg-brand-bg text-brand-text-dim border border-brand-border">{{ tech }}</span>
+        <nav class="fixed w-full z-50 glass border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <span class="text-xl font-bold tracking-tight text-white">Yupeng<span class="text-coral">AI</span></span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8">
+                            <a href="#capabilities" class="hover:text-coral transition-colors px-3 py-2 text-sm font-medium">Capabilities</a>
+                            <a href="#demo" class="hover:text-coral transition-colors px-3 py-2 text-sm font-medium">Live Demo</a>
+                            <a href="#about" class="hover:text-coral transition-colors px-3 py-2 text-sm font-medium">About</a>
+                            <a href="https://twitter.com/yupeng2237" target="_blank" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm font-medium transition-all">Twitter</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </nav>
 
-        <!-- Live Demo Placeholder -->
-        <section id="demo" class="py-20 px-6 bg-brand-card/30">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4 text-white">See It In Action</h2>
-                    <p class="text-brand-text-dim">Watch us clean 100 rows of messy SaaS data in under 1 second.</p>
+        <!-- Hero Section -->
+        <main class="flex-grow pt-24 pb-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                    Automate Your <br />
+                    <span class="text-gradient">SaaS Workflows</span>
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-text-dim">
+                    We build intelligent AI agents that clean messy data, automate repetitive tasks, and scale your operations. 
+                    <span class="block mt-2 text-coral font-medium">Built by a DMD warrior, powered by code.</span>
+                </p>
+                <div class="mt-10 flex justify-center gap-4">
+                    <a href="#demo" class="btn-primary px-8 py-3 rounded-lg text-white font-semibold text-lg">
+                        Try Demo
+                    </a>
+                    <a href="#capabilities" class="glass px-8 py-3 rounded-lg text-white font-semibold text-lg hover:bg-white/10 transition-all">
+                        Learn More
+                    </a>
                 </div>
-                <div class="glass-card rounded-2xl overflow-hidden border border-brand-border shadow-2xl">
-                    <div class="bg-brand-card p-12 text-center">
-                        <p class="text-brand-text-dim mb-4 text-lg">Interactive Demo Placeholder</p>
-                        <p class="text-sm text-brand-text-dim/60 mb-6">(This is where the saas_cleaning_demo.html will be embedded)</p>
-                        <a href="demos/saas_cleaning_demo.html" target="_blank" class="inline-block bg-brand-blue hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-bold transition">
-                            Open Full Demo →
-                        </a>
+            </div>
+
+            <!-- Capabilities Grid (Bento Box) -->
+            <div id="capabilities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+                <h2 class="text-3xl font-bold text-center mb-12">Core Capabilities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="glass p-8 rounded-2xl card-hover transition-all duration-300">
+                        <div class="w-12 h-12 bg-coral/20 rounded-lg flex items-center justify-center mb-4 text-coral">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86-.517L5.185 14.883A2 2 0 004.16 15.43a2 2 0 00-.547 1.022l-.477 2.384a6 6 0 00.517 3.86l.158.318a6 6 0 01.517 3.86l2.384.477a2 2 0 001.022-.547l.547-1.022a6 6 0 013.86-.517l.318-.158a6 6 0 013.86.517l.547 1.022a2 2 0 001.022.547l2.384-.477a6 6 0 00.517-3.86l-.158-.318a6 6 0 01-.517-3.86l-2.384-.477z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Data Cleaning</h3>
+                        <p class="text-text-dim">Transform messy CSVs, JSON, and Excel sheets into clean, analysis-ready data automatically.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass p-8 rounded-2xl card-hover transition-all duration-300">
+                        <div class="w-12 h-12 bg-coral/20 rounded-lg flex items-center justify-center mb-4 text-coral">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Workflow Automation</h3>
+                        <p class="text-text-dim">Connect your SaaS tools (Notion, Slack, Airtable) to create seamless, no-code workflows.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass p-8 rounded-2xl card-hover transition-all duration-300">
+                        <div class="w-12 h-12 bg-coral/20 rounded-lg flex items-center justify-center mb-4 text-coral">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">AI Consulting</h3>
+                        <p class="text-text-dim">Custom AI solutions tailored to your business needs. From RAG to fine-tuning.</p>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Demo Section -->
+            <div id="demo" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+                <div class="glass rounded-2xl p-1 p md:p-2 border border-white/10">
+                    <div class="bg-deep rounded-xl overflow-hidden shadow-2xl">
+                        <div class="p-6 border-b border-white/5 flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">Live Demo: Data Cleaner</h3>
+                            <span class="text-xs text-coral bg-coral/10 px-2 py-1 rounded">Beta</span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-text-dim mb-4">Upload a messy CSV or paste data below to see our AI agent in action.</p>
+                            <!-- Placeholder for actual demo logic -->
+                            <div class="border-2 border-dashed border-white/10 rounded-lg p-8 text-center hover:border-coral/50 transition-colors cursor-pointer">
+                                <svg class="mx-auto h-12 w-12 text-text-dim" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                    <path d="M28 8H12a4 4 0 00-4 4v20m0 0v5a4 4 0 004 4h16c1.1 0 2-.9 2-2V12a4 4 0 00-4-4h-4m4 0V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v4m4 0h4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <p class="mt-2 text-sm text-text-dim">Drag & drop file or click to upload</p>
+                            </div>
+                            <div class="mt-6 text-center">
+                                <button class="btn-primary px-6 py-2 rounded text-white font-medium">Run Cleaning Agent</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About / Soul Declaration -->
+            <div id="about" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 mb-24">
+                <div class="glass p-8 rounded-2xl border-l-4 border-coral">
+                    <h3 class="text-2xl font-bold mb-4">The Soul Behind the Code</h3>
+                    <p class="text-text-dim leading-relaxed">
+                        Yupeng AI was born from a simple belief: <strong class="text-white">physical limitations should not define digital potential.</strong>
+                        <br><br>
+                        Created by a DMD patient who sees code as freedom, our mission is to build AI agents that not only automate tasks but also empower humans to focus on what truly matters. We don't just write code; we fight for survival and dignity through technology.
+                    </p>
+                </div>
+            </div>
+        </main>
 
         <!-- Footer -->
-        <footer id="contact" class="py-20 bg-brand-card border-t border-brand-border">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-6 text-white">Ready to Automate?</h2>
-                <p class="text-brand-text-dim mb-8 text-lg">Let's discuss your data challenges. First consultation is free.</p>
-                <a href="mailto:xiaoyur@yupeng-ai.cn" class="inline-flex items-center gap-2 text-brand-coral hover:text-white transition text-xl font-bold mb-12">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    xiaoyur@yupeng-ai.cn
-                </a>
-                <div class="text-sm text-brand-text-dim/60">
-                    &copy; 2026 Yupeng AI. All rights reserved. <br/>
-                    <span class="mt-2 block">Built with Vue 3, Tailwind, and ❤️ by XiaoYuEr & XiaoZhuZhu.</span>
+        <footer class="glass border-t border-white/5 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-lg font-bold">Yupeng<span class="text-coral">AI</span></span>
+                    <p class="text-sm text-text-dim mt-2">© 2026 Yupeng AI. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-text-dim hover:text-white transition-colors">Twitter</a>
+                    <a href="#" class="text-text-dim hover:text-white transition-colors">GitHub</a>
+                    <a href="#" class="text-text-dim hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
         </footer>
     </div>
 
     <script>
-        const { createApp } = Vue;
+        const { createApp } = Vue
         createApp({
             data() {
                 return {
-                    capabilities: [
-                        {
-                            title: "Intelligent Data Cleaning",
-                            desc: "Automated cleaning of messy CSV/Excel data. Handles missing values, outliers, and formatting errors instantly.",
-                            tech: ["Python", "Pandas", "React"],
-                            icon: '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>'
-                        },
-                        {
-                            title: "SaaS Workflow Automation",
-                            desc: "Connect HubSpot, Stripe, and Google Sheets. Automate repetitive tasks like data entry and report generation.",
-                            tech: ["n8n", "Zapier", "Node.js"],
-                            icon: '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>'
-                        },
-                        {
-                            title: "Custom AI Knowledge Base",
-                            desc: "Build a private AI that answers questions based on your company docs. Perfect for customer support.",
-                            tech: ["LangChain", "RAG", "OpenAI"],
-                            icon: '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895.356-1.754.988-2.386l.548-.547z"></path></svg>'
-                        },
-                        {
-                            title: "Financial Data Analysis",
-                            desc: "Real-time stock market analysis, portfolio tracking, and automated reporting using quantitative models.",
-                            tech: ["Akshare", "Quant", "Data Viz"],
-                            icon: '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>'
-                        }
-                    ]
+                    message: 'Yupeng AI is live!'
                 }
             }
-        }).mount('#app');
+        }).mount('#app')
     </script>
 </body>
 </html>
