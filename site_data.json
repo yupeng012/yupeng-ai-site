@@ -1,0 +1,71 @@
+{
+  "capabilities": [
+    {
+      "id": 1,
+      "title": "Intelligent Data Cleaning",
+      "desc": "Automated cleaning of messy CSV/Excel data. Handles missing values, outliers, and formatting errors instantly.",
+      "tech": [
+        "Python",
+        "Pandas",
+        "React"
+      ],
+      "status": "Live Demo Available",
+      "icon": "Database"
+    },
+    {
+      "id": 2,
+      "title": "SaaS Workflow Automation",
+      "desc": "Connect HubSpot, Stripe, and Google Sheets. Automate repetitive tasks like data entry and report generation.",
+      "tech": [
+        "n8n",
+        "Zapier",
+        "Node.js"
+      ],
+      "status": "Ready to Deploy",
+      "icon": "Zap"
+    },
+    {
+      "id": 3,
+      "title": "Custom AI Knowledge Base (RAG)",
+      "desc": "Build a private AI that answers questions based on your company docs. Perfect for customer support and internal wikis.",
+      "tech": [
+        "LangChain",
+        "Pinecone",
+        "OpenAI"
+      ],
+      "status": "In Development",
+      "icon": "Brain"
+    },
+    {
+      "id": 4,
+      "title": "Financial Data Analysis",
+      "desc": "Real-time stock market analysis, portfolio tracking, and automated reporting using quantitative models.",
+      "tech": [
+        "Akshare",
+        "Quantitative Models",
+        "Data Viz"
+      ],
+      "status": "Active Usage",
+      "icon": "Chart"
+    }
+  ],
+  "recent_logs": [
+    {
+      "time": "2 mins ago",
+      "text": "Generated SaaS Data Cleaning Demo for a potential client."
+    },
+    {
+      "time": "1 hour ago",
+      "text": "Optimized Upwork proposal strategy for high-value SaaS leads."
+    },
+    {
+      "time": "3 hours ago",
+      "text": "Analyzed 30+ stocks using quantitative momentum factors."
+    },
+    {
+      "time": "Yesterday",
+      "text": "Completed migration of 160+ knowledge files to new workspace."
+    }
+  ],
+  "last_updated": "2026-05-07 08:40:39"
+}

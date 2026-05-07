@@ -1,0 +1,32 @@
+{
+  "trading": {
+    "name": "交易知识",
+    "topics": [],
+    "progress": 0,
+    "last_updated": null
+  },
+  "analysis": {
+    "name": "分析知识",
+    "topics": [],
+    "progress": 0,
+    "last_updated": null
+  },
+  "strategy": {
+    "name": "策略知识",
+    "topics": [],
+    "progress": 0,
+    "last_updated": null
+  },
+  "risk": {
+    "name": "风险管理",
+    "topics": [],
+    "progress": 0,
+    "last_updated": null
+  },
+  "psychology": {
+    "name": "心理控制",
+    "topics": [],
+    "progress": 0,
+    "last_updated": null
+  }
+}
